@@ -1,0 +1,8 @@
+---
+# vars file for ansible-role-rails
+
+rails:
+  rbenv:
+    versions:
+      - 2.3.1
+      - 2.3.5

@@ -1,0 +1,18 @@
+---
+# tasks file for ansible-role-rails
+
+- name: Install rails packages
+  become: yes
+  apt: pkg={{ item }} state=installed
+  tags: [packages]
+  with_items:
+    - build-essential
+    - libxml2-dev
+    - libxslt-dev
+    - redis-server
+    - libssl-dev
+    - libreadline-dev
+    - zlib1g-dev
+
+# ============ rbenv ============
+- include: rbenv.yml
