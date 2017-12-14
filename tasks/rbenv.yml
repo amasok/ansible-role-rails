@@ -16,14 +16,14 @@
 - name: Set rbenv1
   lineinfile: >
     dest=~/.zshrc
-    line='eval "$(rbenv init -)"'
-  # when: clone_rbenv.changed
+    line='export PATH="$HOME/.rbenv/bin:$PATH"'
+  when: clone_rbenv.changed
   become: no
 
 - name: Set rbenv2
   lineinfile: >
     dest=~/.zshrc
-    line='export PATH="$HOME/.rbenv/bin:$PATH"'
+    line='eval "$(rbenv init -)"'
   when: clone_rbenv.changed
   become: no
 
